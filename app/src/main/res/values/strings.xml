@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Gym App</string>
+    <string name="fondo_de_imagen">Fondo de imagen</string>
+    <string name="utp_fit">UTP FIT</string>
+    <string name="mejora_tu_rendimiento">Mejora tu rendimiento</string>
+    <string name="rutina_de_ma_ana">Rutina de mañana</string>
+    <string name="rutina_de_30_minutos">Rutina de 30 minutos</string>
+    <string name="rutina_de_noche">Rutina de noche</string>
+    <string name="mejora_tu_sue_o">Mejora tu sueño</string>
+    <string name="rutina_de_30_minutos2">Rutina de 30 minutos</string>
+    <string name="comenzar">Comenzar</string>
+    <string name="comenzar2">comenzar</string>
+</resources>

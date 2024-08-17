@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#C73659"
+    android:orientation="vertical"
+    tools:context="com.example.gymapp.MainActivity">
+
+   <androidx.appcompat.widget.Toolbar
+       android:id="@+id/toolbar"
+       android:layout_width="match_parent"
+       android:layout_height="?attr/actionBarSize"
+       android:background="#151515"
+       android:textAlignment="textEnd"
+       android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+       app:title="UTP FIT"
+       app:titleTextColor="#EEEEEE"
+       android:gravity="end"
+       />
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:scrollbars="none">
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_margin="10.0dp"
+            android:layout_marginTop="15.0dp"
+            android:background="#EEEEEE"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:onClick="paraManana"
+                android:baselineAligned="true"
+                android:layout_width="fill_parent"
+                android:layout_height="150.0dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="horizontal"
+                >
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.0"
+                    android:orientation="vertical"
+                    >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="monospace"
+                    android:padding="5.0sp"
+                    android:text="@string/rutina_de_ma_ana"
+                    android:textColor="#151515"
+                    android:textSize="20.0sp"
+                    android:textStyle="bold"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="serif"
+                    android:padding="5.0dp"
+                    android:text="@string/mejora_tu_rendimiento"
+                    android:textSize="15.0sp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5.0dp"
+                    android:text="@string/rutina_de_30_minutos"
+                    android:textColor="#A91D3A"
+                    android:textStyle="bold"/>
+
+
+
+                </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="2.0"
+                >
+                <pl.droidsonroids.gif.GifImageView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/exersice_7"
+                    />
+
+
+
+            </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.0"
+                    >
+                    <ImageView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10.0dp"
+                        android:src="@drawable/baseline_keyboard_arrow_right_24"
+                        />
+
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/start1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10.0dp"
+                android:background="@drawable/btn"
+                android:text="@string/comenzar2"
+                android:textAllCaps="true"
+                android:textColor="#EEEEEE"
+                />
+
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_margin="10.0dp"
+                android:layout_marginTop="15.0dp"
+                android:background="#EEEEEE"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:onClick="paraNoche"
+                    android:baselineAligned="true"
+                    android:layout_width="fill_parent"
+                    android:layout_height="150.0dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    >
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.0"
+                        android:orientation="vertical"
+                        >
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="monospace"
+                            android:padding="5.0dp"
+                            android:text="@string/rutina_de_noche"
+                            android:textColor="#151515"
+                            android:textSize="20.0sp"
+                            android:textStyle="bold"
+                            />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="serif"
+                            android:padding="5.0dp"
+                            android:text="@string/mejora_tu_sue_o"
+                            android:textSize="15.0sp"
+                            android:textStyle="bold"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="5.0dp"
+                            android:text="@string/rutina_de_30_minutos2"
+                            android:textColor="#A91D3A"
+                            android:textStyle="bold"/>
+
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2.0"
+                        >
+                        <pl.droidsonroids.gif.GifImageView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/exersice_7"
+                            />
+
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.0"
+                        >
+                        <ImageView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="10.0dp"
+                            android:src="@drawable/baseline_keyboard_arrow_right_24"
+                            />
+
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/start2"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10.0dp"
+                    android:background="@drawable/btn"
+                    android:text="@string/comenzar"
+                    android:textAllCaps="true"
+                    android:textColor="#EEEEEE"
+                    />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+
+    </ScrollView>
+
+</LinearLayout>
