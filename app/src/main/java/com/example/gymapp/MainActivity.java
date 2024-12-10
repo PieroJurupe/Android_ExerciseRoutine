@@ -42,7 +42,6 @@ public class MainActivity extends AppCompatActivity {
         exercises = new ArrayList<>();
         Log.d("MainActivity", "xd");
         button1 = findViewById(R.id.start1);
-        button2 = findViewById(R.id.start2);
         addNameButton = findViewById(R.id.addNameButton);
         mainLayout = findViewById(R.id.main);
 
@@ -50,14 +49,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, SecondActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        button2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, SecondActivity2.class);
                 startActivity(intent);
             }
         });
@@ -135,7 +126,7 @@ public class MainActivity extends AppCompatActivity {
         textView2.setTypeface(Typeface.SERIF, Typeface.BOLD);
 
         TextView textView3 = new TextView(this);
-        textView3.setText("Rutina de " + duration + " minutos");
+        textView3.setText("Realizar " + duration + " veces a la semana");
         textView3.setTextSize(15);
         textView3.setPadding(5, 5, 5, 5);
         textView3.setTextColor(Color.parseColor("#A91D3A"));
@@ -217,9 +208,4 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void paraNoche(View view) {
-        Intent intent = new Intent(MainActivity.this, SecondActivity2.class);
-        startActivity(intent);
-
-    }
 }

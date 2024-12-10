@@ -1,17 +1,48 @@
-<!-- app/src/main/res/layout/activity_cronometro.xml -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center"
-    android:padding="16dp">
+    android:orientation="vertical">
 
-    <TextView
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarcron"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@android:color/black"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <TextView
+            android:id="@+id/toolbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cronómetro"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_gravity="center"/>
+    </androidx.appcompat.widget.Toolbar>
+
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/exercise_gif_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Cronómetro"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:layout_marginBottom="20dp"/>
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"/>
 
+    <TextView
+        android:id="@+id/exercise_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:layout_marginTop="20dp"/>
+
+    <TextView
+        android:id="@+id/exercise_time_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"/>
 </LinearLayout>

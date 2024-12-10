@@ -100,7 +100,7 @@ public class AddRoutineActivity extends AppCompatActivity {
         newSpinner.setAdapter(adapter);
 
         EditText newEditText = new EditText(this);
-        newEditText.setHint("Contador");
+        newEditText.setHint("Seg");
         newEditText.setInputType(android.text.InputType.TYPE_CLASS_NUMBER);
         newEditText.setTextColor(getResources().getColor(R.color.white));
         newEditText.setHintTextColor(getResources().getColor(R.color.white));

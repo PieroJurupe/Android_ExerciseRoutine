@@ -24,7 +24,7 @@
             android:textStyle="bold" />
     </androidx.appcompat.widget.Toolbar>
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttonChronometer"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"

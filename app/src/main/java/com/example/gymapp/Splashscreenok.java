@@ -2,11 +2,11 @@ package com.example.gymapp;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
+import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,9 +16,9 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class Splashscreenok extends AppCompatActivity {
 
-    Animation up,down;
+    Animation up, down;
     ImageView imageView;
-    TextView textView;
+    Button startButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,21 +26,21 @@ public class Splashscreenok extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_splashscreenok);
 
-        ImageView imageView=findViewById(R.id.appsplash);
-            up= AnimationUtils.loadAnimation(getApplicationContext(),R.anim.up);
-            imageView.setAnimation(up);
-        TextView textView=findViewById(R.id.appname);
-            down= AnimationUtils.loadAnimation(getApplicationContext(),R.anim.down);
-            textView.setAnimation(down);
+        imageView = findViewById(R.id.appsplash);
+        up = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.up);
+        imageView.setAnimation(up);
 
-        new Handler().postDelayed(new Runnable() {
+        startButton = findViewById(R.id.start_button);
+        down = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.down);
+        startButton.setAnimation(down);
+
+        startButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void run() {
-                startActivity(new Intent(getApplicationContext(),MainActivity.class));
+            public void onClick(View v) {
+                startActivity(new Intent(Splashscreenok.this, MainActivity.class));
                 finish();
             }
-        },3000);
-
+        });
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());

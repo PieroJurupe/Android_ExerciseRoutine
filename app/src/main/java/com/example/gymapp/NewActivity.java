@@ -23,10 +23,6 @@ public class NewActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new);
 
-
-
-
-
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -77,11 +73,11 @@ public class NewActivity extends AppCompatActivity {
                 textView1.setTypeface(android.graphics.Typeface.MONOSPACE, android.graphics.Typeface.BOLD);
 
                 TextView textView2 = new TextView(this);
-                textView2.setText("Repetir cada mañana");
+                textView2.setText("------------------------------------>");
                 textView2.setTypeface(android.graphics.Typeface.DEFAULT_BOLD);
 
                 TextView textView3 = new TextView(this);
-                textView3.setText("1 MIN");
+                textView3.setText("5 SEG");
                 textView3.setTextColor(android.graphics.Color.parseColor("#C73659"));
                 textView3.setTypeface(android.graphics.Typeface.DEFAULT_BOLD);
 
@@ -134,6 +130,7 @@ public class NewActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(NewActivity.this, CronometroActivity.class);
+                intent.putStringArrayListExtra("exercises", exercises);
                 startActivity(intent);
             }
         });
