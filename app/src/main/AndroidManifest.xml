@@ -13,8 +13,7 @@
         android:theme="@style/Theme.GymApp"
         tools:targetApi="31">
         <activity
-            android:name=".CronometroActivity"
-            android:exported="false" />
+            android:name=".CronometroActivity"/>
         <activity android:name=".NewActivity" />
         <activity
             android:name=".AddRoutineActivity"
