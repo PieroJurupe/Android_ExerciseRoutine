@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
@@ -39,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         exercises = new ArrayList<>();
+        Log.d("MainActivity", "xd");
         button1 = findViewById(R.id.start1);
         button2 = findViewById(R.id.start2);
         addNameButton = findViewById(R.id.addNameButton);
@@ -83,11 +85,13 @@ public class MainActivity extends AppCompatActivity {
             String exerciseType = data.getStringExtra("exerciseType");
             String duration = data.getStringExtra("duration");
             int exerciseImage = data.getIntExtra("exerciseImage", R.drawable.exercise_1);
+            exercises = data.getStringArrayListExtra("exercises");
             addNewLinearLayout(name, exerciseType, duration, exerciseImage,exercises);
         }
     }
 
     private void addNewLinearLayout(String name, String exerciseType, String duration, int exerciseImage, ArrayList<String> exercises) {
+        Log.d("MainActivity", "Ejercicios: " + exercises);
         LinearLayout outerLayout = new LinearLayout(this);
         outerLayout.setLayoutParams(new LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.MATCH_PARENT,
@@ -186,6 +190,9 @@ public class MainActivity extends AppCompatActivity {
         startButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Log.d("MainActivity", "Ejercicios: " + exercises);
+                Log.d("MainActivity2", "Ejercicios: " + name);
+
                 Intent intent = new Intent(MainActivity.this, NewActivity.class);
                 intent.putExtra("name", name);
                 intent.putStringArrayListExtra("exercises", exercises);
@@ -197,6 +204,11 @@ public class MainActivity extends AppCompatActivity {
 
         LinearLayout scrollViewLayout = findViewById(R.id.scrollViewLayout);
         scrollViewLayout.addView(outerLayout);
+
+       for (int i = 0; i < exercises.size(); i++) {
+            LinearLayout exerciseLayout = new LinearLayout(this);
+            exerciseLayout.setId(i);
+        }
     }
 
     public void paraManana(View view) {

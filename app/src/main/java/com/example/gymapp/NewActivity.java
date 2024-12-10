@@ -29,11 +29,13 @@ public class NewActivity extends AppCompatActivity {
         }
 
         String name = getIntent().getStringExtra("name");
+
         if (name != null) {
             TextView toolbarTitle = toolbar.findViewById(R.id.toolbar_title);
             toolbarTitle.setText(name);
         }
 
+        Log.d("NewActivity", "Intent extras: " + getIntent().getExtras());
         ArrayList<String> exercises = getIntent().getStringArrayListExtra("exercises");
         if (exercises != null) {
             LinearLayout layoutExercises = findViewById(R.id.layoutExercises);
@@ -41,7 +43,7 @@ public class NewActivity extends AppCompatActivity {
                 LinearLayout exerciseLayout = new LinearLayout(this);
                 exerciseLayout.setLayoutParams(new LinearLayout.LayoutParams(
                         LinearLayout.LayoutParams.MATCH_PARENT,
-                        100));
+                        400));
                 exerciseLayout.setGravity(android.view.Gravity.CENTER);
                 exerciseLayout.setOrientation(LinearLayout.VERTICAL);
 
@@ -51,6 +53,7 @@ public class NewActivity extends AppCompatActivity {
                         LinearLayout.LayoutParams.WRAP_CONTENT));
                 innerLayout.setOrientation(LinearLayout.HORIZONTAL);
                 innerLayout.setBackgroundColor(android.graphics.Color.parseColor("#EEEEEE"));
+                innerLayout.setGravity(android.view.Gravity.CENTER_VERTICAL);
                 innerLayout.setOnClickListener(v -> Imagebuttonclicked());
 
                 LinearLayout textLayout = new LinearLayout(this);
@@ -58,6 +61,7 @@ public class NewActivity extends AppCompatActivity {
                         0,
                         LinearLayout.LayoutParams.WRAP_CONTENT, 1.0f));
                 textLayout.setOrientation(LinearLayout.VERTICAL);
+                textLayout.setGravity(android.view.Gravity.CENTER_VERTICAL);
 
                 TextView textView1 = new TextView(this);
                 textView1.setText(exercise);
@@ -78,36 +82,31 @@ public class NewActivity extends AppCompatActivity {
                 textLayout.addView(textView2);
                 textLayout.addView(textView3);
 
-                LinearLayout gifLayout = new LinearLayout(this);
-                gifLayout.setLayoutParams(new LinearLayout.LayoutParams(
-                        0,
-                        LinearLayout.LayoutParams.WRAP_CONTENT, 2.0f));
+                LinearLayout gifAndArrowLayout = new LinearLayout(this);
+                gifAndArrowLayout.setLayoutParams(new LinearLayout.LayoutParams(
+                        LinearLayout.LayoutParams.WRAP_CONTENT,
+                        LinearLayout.LayoutParams.WRAP_CONTENT));
+                gifAndArrowLayout.setOrientation(LinearLayout.HORIZONTAL);
+                gifAndArrowLayout.setGravity(android.view.Gravity.END | android.view.Gravity.CENTER_VERTICAL);
 
                 GifImageView gifImageView = new GifImageView(this);
                 gifImageView.setLayoutParams(new LinearLayout.LayoutParams(
-                        LinearLayout.LayoutParams.MATCH_PARENT,
-                        LinearLayout.LayoutParams.WRAP_CONTENT));
-                gifImageView.setImageResource(R.drawable.exercise_1);
-
-                gifLayout.addView(gifImageView);
-
-                LinearLayout arrowLayout = new LinearLayout(this);
-                arrowLayout.setLayoutParams(new LinearLayout.LayoutParams(
-                        LinearLayout.LayoutParams.WRAP_CONTENT,
-                        LinearLayout.LayoutParams.WRAP_CONTENT));
-                arrowLayout.setGravity(android.view.Gravity.CENTER);
+                        270, 270));
+                gifImageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
+                gifImageView.setImageResource(getResources().getIdentifier("exercise_" + (exercises.indexOf(exercise) + 1), "drawable", getPackageName()));
 
                 ImageView arrowImageView = new ImageView(this);
                 arrowImageView.setLayoutParams(new LinearLayout.LayoutParams(
-                        LinearLayout.LayoutParams.MATCH_PARENT,
+                        LinearLayout.LayoutParams.WRAP_CONTENT,
                         LinearLayout.LayoutParams.WRAP_CONTENT));
+                arrowImageView.setPadding(10, 10, 15, 10);
                 arrowImageView.setImageResource(R.drawable.baseline_keyboard_arrow_right_24);
 
-                arrowLayout.addView(arrowImageView);
+                gifAndArrowLayout.addView(gifImageView);
+                gifAndArrowLayout.addView(arrowImageView);
 
                 innerLayout.addView(textLayout);
-                innerLayout.addView(gifLayout);
-                innerLayout.addView(arrowLayout);
+                innerLayout.addView(gifAndArrowLayout);
 
                 exerciseLayout.addView(innerLayout);
 
