@@ -48,8 +48,9 @@ public class AddRoutineActivity extends AppCompatActivity {
         buttonAddExercise = findViewById(R.id.buttonAddExercise);
         layoutNewExercises = findViewById(R.id.layoutNewExercises);
 
+        // AddRoutineActivity.java
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
-                R.array.exercise_images, android.R.layout.simple_spinner_item);
+                R.array.exercise_images, R.layout.spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerExerciseImage.setAdapter(adapter);
 
@@ -95,7 +96,7 @@ public class AddRoutineActivity extends AppCompatActivity {
 
         Spinner newSpinner = new Spinner(this);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
-                R.array.exercise_images, android.R.layout.simple_spinner_item);
+                R.array.exercise_images, R.layout.spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         newSpinner.setAdapter(adapter);
 

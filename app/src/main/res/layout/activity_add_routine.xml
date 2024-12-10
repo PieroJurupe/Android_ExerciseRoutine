@@ -60,7 +60,13 @@
                 android:layout_height="wrap_content"
                 android:hint="Veces por semana"
                 android:inputType="number" />
-
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Foto de perfil de la rutina"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
             <Spinner
                 android:id="@+id/spinnerExerciseImage"
                 android:layout_width="match_parent"

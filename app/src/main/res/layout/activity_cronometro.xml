@@ -1,7 +1,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="#2A3747"
+    >
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbarcron"
@@ -35,7 +37,8 @@
         android:layout_gravity="center"
         android:textSize="30sp"
         android:textStyle="bold"
-        android:layout_marginTop="20dp"/>
+        android:layout_marginTop="20dp"
+        android:textColor="@android:color/white"/>
 
     <TextView
         android:id="@+id/exercise_time_view"
@@ -44,5 +47,6 @@
         android:layout_gravity="center"
         android:textSize="40sp"
         android:textStyle="bold"
-        android:layout_marginTop="10dp"/>
+        android:layout_marginTop="10dp"
+        android:textColor="@android:color/white"/>
 </LinearLayout>
