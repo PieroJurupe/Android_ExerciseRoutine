@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="#C73659"
+    android:background="#2A3747"
     android:orientation="vertical"
     tools:context="com.example.gymapp.MainActivity">
 
@@ -16,16 +16,26 @@
        android:background="#151515"
        android:textAlignment="textEnd"
        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-       app:title="UTP FIT"
+       app:title="SYNAP GYM"
        app:titleTextColor="#EEEEEE"
        android:gravity="end"
        />
-
+    <Button
+        android:id="@+id/addNameButton"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10.0dp"
+        android:background="@drawable/btn"
+        android:text="Agregar Rutina"
+        android:textAllCaps="true"
+        android:textColor="#EEEEEE" />
     <ScrollView
+        android:id="@+id/scrollView"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:scrollbars="none">
         <LinearLayout
+            android:id="@+id/scrollViewLayout"
             android:layout_marginTop="10dp"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
@@ -91,8 +101,8 @@
                 android:layout_weight="2.0"
                 >
                 <pl.droidsonroids.gif.GifImageView
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_width="270px"
+                    android:layout_height="300px"
                     android:src="@drawable/exercise_1"
                     />
 
@@ -192,12 +202,11 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="2.0"
                         >
-                        <pl.droidsonroids.gif.GifImageView
-                            android:layout_width="fill_parent"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/exercise_1"
-                            />
 
+                        <pl.droidsonroids.gif.GifImageView
+                            android:layout_width="270px"
+                            android:layout_height="300px"
+                            android:src="@drawable/exercise_1" />
 
 
                     </LinearLayout>
@@ -233,8 +242,9 @@
 
             </LinearLayout>
 
-        </LinearLayout>
 
+
+        </LinearLayout>
 
 
     </ScrollView>

@@ -1,0 +1,101 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="#2A3747"
+    android:fitsSystemWindows="true">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#151515"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        android:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="NUEVA RUTINA"
+            android:textColor="#EEEEEE"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </androidx.appcompat.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp"
+        android:layout_marginTop="10dp">
+
+        <LinearLayout
+            android:id="@+id/scrollViewLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/editTextName"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nombre de la rutina" />
+
+            <EditText
+                android:id="@+id/editTextExerciseType"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Tipo de ejercicio" />
+
+            <EditText
+                android:id="@+id/editTextDuration"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Duración (minutos)"
+                android:inputType="number" />
+
+            <Spinner
+                android:id="@+id/spinnerExerciseImage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                />
+
+            <TextView
+                android:id="@+id/textViewQuestion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="¿Qué ejercicios quieres agregar a tu rutina?"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:id="@+id/layoutNewExercises"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="10dp" />
+
+            <Button
+                android:id="@+id/buttonAddExercise"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Agregar" />
+
+            <Button
+                android:id="@+id/buttonAccept"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Aceptar" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
